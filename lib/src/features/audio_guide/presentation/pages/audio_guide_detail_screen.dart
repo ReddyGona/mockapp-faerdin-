@@ -9,7 +9,6 @@ class AudioGuideDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Column(
         children: [
           Stack(
@@ -28,7 +27,11 @@ class AudioGuideDetailScreen extends StatelessWidget {
                 left: 10,
                 child: IconButton(
                   onPressed: () => context.pop(),
-                  icon: const Icon(Icons.arrow_back, size: 35),
+                  icon: Icon(
+                    Icons.arrow_back,
+                    size: 35,
+                    color: Theme.of(context).colorScheme.surface,
+                  ),
                 ),
               ),
               Positioned(

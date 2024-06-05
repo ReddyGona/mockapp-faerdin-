@@ -1,8 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mockapp/src/core/core_exports.dart';
 import 'package:mockapp/src/core/utils/constants/app_language.dart';
 import 'package:mockapp/src/features/settings/presentation/widgets/font_size_widget.dart';
 import 'package:mockapp/src/features/settings/presentation/widgets/language_picker_widget.dart';
+import 'package:mockapp/src/shared/shared_exports.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -18,7 +21,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      //  backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -29,31 +32,40 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 AppStrings.settingsText,
                 style: TextStyle(fontSize: 26),
               ),
-              const ExpansionTile(
+              ExpansionTile(
                 title: Text(
                   AppStrings.userPreferencesText,
-                  style: TextStyle(fontSize: 20),
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        fontSize: Dimenstions.size20,
+                        fontWeight: FontWeight.w500,
+                      ),
                 ),
-                tilePadding: EdgeInsets.symmetric(horizontal: 0, vertical: 20),
-                shape: RoundedRectangleBorder(),
+                tilePadding:
+                    const EdgeInsets.symmetric(horizontal: 0, vertical: 20),
+                shape: const RoundedRectangleBorder(),
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         AppStrings.appFontSizeText,
-                        style: TextStyle(fontSize: 18),
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                              fontWeight: FontWeight.normal,
+                            ),
                       ),
-                      FontSizeWidget(),
+                      const FontSizeWidget(),
                     ],
                   ),
                 ],
               ),
               const Divider(),
               ExpansionTile(
-                title: const Text(
+                title: Text(
                   AppStrings.languageSettingsText,
-                  style: TextStyle(fontSize: 20),
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        fontSize: Dimenstions.size20,
+                        fontWeight: FontWeight.w500,
+                      ),
                 ),
                 tilePadding:
                     const EdgeInsets.symmetric(horizontal: 0, vertical: 20),
@@ -77,7 +89,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             width: 150,
                             height: 40,
                             decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                               border: Border.all(color: Colors.grey),
                               borderRadius: BorderRadius.circular(4),
                             ),
@@ -106,14 +118,43 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ],
               ),
               const Divider(),
-              const ExpansionTile(
+              ExpansionTile(
                 title: Text(
                   AppStrings.termsOfServiceText,
-                  style: TextStyle(fontSize: 20),
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        fontSize: Dimenstions.size20,
+                        fontWeight: FontWeight.w500,
+                      ),
                 ),
-                tilePadding: EdgeInsets.symmetric(horizontal: 0, vertical: 20),
-                shape: RoundedRectangleBorder(),
+                tilePadding:
+                    const EdgeInsets.symmetric(horizontal: 0, vertical: 20),
+                shape: const RoundedRectangleBorder(),
               ),
+              const Divider(),
+              ListTile(
+                contentPadding: EdgeInsets.zero,
+                leading: Text(
+                  'Dark Mode',
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
+                      ),
+                ),
+                trailing: BlocBuilder<ThemeSwitchBloc, ThemeSwitchState>(
+                  builder: (BuildContext context, ThemeSwitchState state) {
+                    return CupertinoSwitch(
+                      value: state.switchValue,
+                      onChanged: (_) {
+                        if (state.switchValue) {
+                          context.read<ThemeSwitchBloc>().add(SwitchOffEvent());
+                        } else {
+                          context.read<ThemeSwitchBloc>().add(SwitchOnEvent());
+                        }
+                      },
+                    );
+                  },
+                ),
+              )
             ],
           ),
         ),

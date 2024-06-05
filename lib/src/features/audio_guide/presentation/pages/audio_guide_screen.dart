@@ -21,12 +21,12 @@ class AudioGuideScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
-                  const Text(
+                  Text(
                     AppStrings.selectAudioGuideText,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 22,
-                    ),
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                          fontWeight: FontWeight.normal,
+                          color: AppColors.white,
+                        ),
                   ),
                   const SizedBox(height: 20),
                   Expanded(
@@ -44,12 +44,13 @@ class AudioGuideScreen extends StatelessWidget {
                             child: Container(
                               width: double.infinity,
                               margin: const EdgeInsets.only(bottom: 20),
-                              decoration: const BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.all(
+                              decoration: BoxDecoration(
+                                color:
+                                    Theme.of(context).scaffoldBackgroundColor,
+                                borderRadius: const BorderRadius.all(
                                   Radius.circular(30),
                                 ),
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     color: Colors.black12,
                                     blurRadius: 5,

@@ -21,7 +21,7 @@ class ScaffoldBottomNavBar extends StatelessWidget {
         }
 
         return Scaffold(
-          backgroundColor: Colors.white,
+          //  backgroundColor: Colors.white,
           body: child,
           floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
           floatingActionButton: Visibility(
@@ -43,7 +43,6 @@ class ScaffoldBottomNavBar extends StatelessWidget {
           ),
           bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
-            backgroundColor: Colors.white,
             currentIndex: currentIndex,
             onTap: (value) =>
                 context.read<NavigationCubit>().navigateTo(context, value),

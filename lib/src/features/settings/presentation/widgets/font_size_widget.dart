@@ -59,7 +59,7 @@ class _FontSizeWidgetState extends State<FontSizeWidget> {
           height: 30,
           margin: const EdgeInsets.symmetric(horizontal: 8),
           decoration: BoxDecoration(
-            color: Colors.grey.shade300,
+            color: Theme.of(context).scaffoldBackgroundColor,
           ),
           child: Center(
             child: Text(

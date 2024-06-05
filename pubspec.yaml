@@ -31,15 +31,36 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # The following adds the Cupertino Icons font to your application.
+  # Adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
+
+  # A declarative router for Flutter based on the Navigator 2.0 API.
   go_router: ^14.1.3
+
+  # A service locator for dependency injection.
   get_it: ^7.7.0
+
+  # A Flutter package to draw SVG (Scalable Vector Graphics) files.
   flutter_svg: ^2.0.10+1
+
+  # State management library for Flutter applications.
   flutter_bloc: ^8.1.5
+
+  # A Dart package to simplify equality comparisons.
   equatable: ^2.0.5
+
+  # A functional programming library for Dart.
   dartz: ^0.10.1
+
+  # A package for secure storage of shared preferences.
+  secure_shared_preferences: ^0.0.4
+
+  # A Flutter bloc package that uses hydrated storage to persist state.
+  hydrated_bloc: ^9.1.5
+
+  # A Flutter package for finding commonly used locations on the filesystem.
+  path_provider: ^2.1.3
 
 dev_dependencies:
   flutter_test:

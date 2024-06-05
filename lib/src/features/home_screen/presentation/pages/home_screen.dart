@@ -22,9 +22,9 @@ class HomeScreen extends StatelessWidget {
             child: Container(
               margin: const EdgeInsets.symmetric(horizontal: 20),
               padding: const EdgeInsets.symmetric(horizontal: 30),
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(
+              decoration: BoxDecoration(
+                color: Theme.of(context).scaffoldBackgroundColor,
+                borderRadius: const BorderRadius.all(
                   Radius.circular(20),
                 ),
               ),
@@ -36,9 +36,12 @@ class HomeScreen extends StatelessWidget {
                     AppPaths.homeImage,
                     width: 70,
                   ),
-                  const Text(
+                  Text(
                     AppStrings.welcomeText,
-                    style: TextStyle(fontSize: 24),
+                    style: Theme.of(context)
+                        .textTheme
+                        .headlineMedium
+                        ?.copyWith(fontWeight: FontWeight.w400),
                   ),
                   const SizedBox(height: 20),
                   const Text(
