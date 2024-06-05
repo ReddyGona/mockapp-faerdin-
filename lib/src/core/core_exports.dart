@@ -8,3 +8,4 @@ export 'errors/failures.dart';
 export 'usecase/usecase.dart';
 export 'core_injections.dart';
 export 'models/dropdown_model.dart';
+export 'utils/constants/app_strings.dart';

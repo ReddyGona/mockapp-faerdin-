@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mockapp/src/core/core_exports.dart';
 import 'package:mockapp/src/core/utils/constants/app_paths.dart';
 import 'package:mockapp/src/features/bottom_nav/presentation/cubit/navigation_cubit.dart';
 
@@ -65,17 +66,17 @@ class ScaffoldBottomNavBar extends StatelessWidget {
                   width: 24,
                   fit: BoxFit.cover,
                 ),
-                label: 'Home',
+                label: AppStrings.homeText,
               ),
               const BottomNavigationBarItem(
                 icon: Icon(Icons.audiotrack_outlined, size: 24),
                 activeIcon: Icon(Icons.audiotrack_rounded, size: 24),
-                label: 'Audio Guide',
+                label: AppStrings.audioGuideText,
               ),
               const BottomNavigationBarItem(
                 icon: Icon(Icons.settings_outlined, size: 24),
                 activeIcon: Icon(Icons.settings, size: 24),
-                label: 'Settings',
+                label: AppStrings.settingsText,
               ),
             ],
           ),

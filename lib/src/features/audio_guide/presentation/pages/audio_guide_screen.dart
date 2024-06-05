@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mockapp/src/core/core_injections.dart';
-import 'package:mockapp/src/core/routing/app_routing_abstract/app_routing_abstract.dart';
-import 'package:mockapp/src/core/routing/route_constants.dart';
+import 'package:mockapp/src/core/core_exports.dart';
 import 'package:mockapp/src/core/utils/constants/app_paths.dart';
 
 class AudioGuideScreen extends StatelessWidget {
@@ -24,7 +22,7 @@ class AudioGuideScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const Text(
-                    'Select An Audio Guide From the list below.',
+                    AppStrings.selectAudioGuideText,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 22,
@@ -75,7 +73,7 @@ class AudioGuideScreen extends StatelessWidget {
                                           CrossAxisAlignment.start,
                                       children: [
                                         const Text(
-                                          'Oslo - Bergen',
+                                          AppStrings.osloBergenText,
                                           style: TextStyle(fontSize: 26),
                                         ),
                                         const SizedBox(height: 10),
@@ -89,7 +87,8 @@ class AudioGuideScreen extends StatelessWidget {
                                                   AppPaths.locationImage,
                                                   width: 20,
                                                 ),
-                                                const Text('Point 1: Oslo'),
+                                                const Text(
+                                                    AppStrings.point1Text),
                                               ],
                                             ),
                                             const SizedBox(width: 15),
@@ -99,7 +98,8 @@ class AudioGuideScreen extends StatelessWidget {
                                                   AppPaths.locationImage,
                                                   width: 20,
                                                 ),
-                                                const Text('Point 2: Bergen'),
+                                                const Text(
+                                                    AppStrings.point2Text),
                                               ],
                                             ),
                                           ],

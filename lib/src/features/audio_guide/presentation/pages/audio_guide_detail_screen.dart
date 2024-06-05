@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mockapp/src/core/core_exports.dart';
 import 'package:mockapp/src/core/utils/constants/app_paths.dart';
 
 class AudioGuideDetailScreen extends StatelessWidget {
@@ -49,7 +50,7 @@ class AudioGuideDetailScreen extends StatelessWidget {
                         minimumSize: const Size(250, 50),
                       ),
                       child: const Text(
-                        'View On Map',
+                        AppStrings.viewOnMapText,
                         style: TextStyle(fontSize: 20),
                       ),
                     ),
@@ -67,7 +68,7 @@ class AudioGuideDetailScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      'Oslo - Bergen',
+                      AppStrings.osloBergenText,
                       style: TextStyle(fontSize: 26),
                     ),
                     const SizedBox(height: 10),
@@ -80,7 +81,7 @@ class AudioGuideDetailScreen extends StatelessWidget {
                               AppPaths.locationImage,
                               width: 20,
                             ),
-                            const Text('Point 1: Oslo'),
+                            const Text(AppStrings.point1Text),
                           ],
                         ),
                         const SizedBox(width: 15),
@@ -90,7 +91,7 @@ class AudioGuideDetailScreen extends StatelessWidget {
                               AppPaths.locationImage,
                               width: 20,
                             ),
-                            const Text('Point 2: Bergen'),
+                            const Text(AppStrings.point2Text),
                           ],
                         ),
                       ],
@@ -106,7 +107,7 @@ class AudioGuideDetailScreen extends StatelessWidget {
                               width: 20,
                             ),
                             const SizedBox(width: 8),
-                            const Text('7h 3m'),
+                            const Text(AppStrings.timeText),
                           ],
                         ),
                         const SizedBox(width: 15),
@@ -124,7 +125,7 @@ class AudioGuideDetailScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 18),
                     const Text(
-                      "The journey between Oslo and Bergen across Hardangervidda offers beautiful jords, spectacular mountains and fabulous nature. Among things you will find on this trip are Northern Europe's largest mountain plateau, Hardangervidda, some of Norway's greatest waterfalls, one of the world's longest suspension bridge and much",
+                      AppStrings.osloDescriptionText,
                       style: TextStyle(fontSize: 18),
                       textAlign: TextAlign.left,
                     ),
@@ -150,7 +151,7 @@ class AudioGuideDetailScreen extends StatelessWidget {
             minimumSize: const Size(250, 50),
           ),
           child: const Text(
-            'Start Your Journey',
+            AppStrings.startYourJourneyText,
             style: TextStyle(fontSize: 20),
           ),
         ),

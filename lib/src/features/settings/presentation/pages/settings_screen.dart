@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mockapp/src/core/core_exports.dart';
 import 'package:mockapp/src/core/utils/constants/app_language.dart';
 import 'package:mockapp/src/features/settings/presentation/widgets/font_size_widget.dart';
 import 'package:mockapp/src/features/settings/presentation/widgets/language_picker_widget.dart';
@@ -26,12 +26,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'Settings',
+                AppStrings.settingsText,
                 style: TextStyle(fontSize: 26),
               ),
               const ExpansionTile(
                 title: Text(
-                  'User Preferences',
+                  AppStrings.userPreferencesText,
                   style: TextStyle(fontSize: 20),
                 ),
                 tilePadding: EdgeInsets.symmetric(horizontal: 0, vertical: 20),
@@ -41,29 +41,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'App Font Size',
+                        AppStrings.appFontSizeText,
                         style: TextStyle(fontSize: 18),
                       ),
-                      // Row(
-                      //   children: [
-                      //     const Icon(Icons.remove),
-                      //     Container(
-                      //       width: 50,
-                      //       height: 30,
-                      //       margin: const EdgeInsets.symmetric(horizontal: 8),
-                      //       decoration: BoxDecoration(
-                      //         color: Colors.grey.shade300,
-                      //       ),
-                      //       child: const Center(
-                      //         child: Text(
-                      //           'M',
-                      //           style: TextStyle(fontSize: 18),
-                      //         ),
-                      //       ),
-                      //     ),
-                      //     const Icon(Icons.add)
-                      //   ],
-                      // )
                       FontSizeWidget(),
                     ],
                   ),
@@ -72,7 +52,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               const Divider(),
               ExpansionTile(
                 title: const Text(
-                  'Language Settings',
+                  AppStrings.languageSettingsText,
                   style: TextStyle(fontSize: 20),
                 ),
                 tilePadding:
@@ -84,7 +64,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text(
-                        'App Language',
+                        AppStrings.appLanguageText,
                         style: TextStyle(fontSize: 18),
                       ),
                       Padding(
@@ -128,7 +108,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               const Divider(),
               const ExpansionTile(
                 title: Text(
-                  'Terms Of service',
+                  AppStrings.termsOfServiceText,
                   style: TextStyle(fontSize: 20),
                 ),
                 tilePadding: EdgeInsets.symmetric(horizontal: 0, vertical: 20),

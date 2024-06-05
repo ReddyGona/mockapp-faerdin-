@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mockapp/src/core/core_exports.dart';
 import 'package:mockapp/src/core/utils/constants/app_paths.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -36,12 +37,12 @@ class HomeScreen extends StatelessWidget {
                     width: 70,
                   ),
                   const Text(
-                    'Welcome to Faerdin',
+                    AppStrings.welcomeText,
                     style: TextStyle(fontSize: 24),
                   ),
                   const SizedBox(height: 20),
                   const Text(
-                    'Thank you for choosing to participate in the Faerdin pilot test for the audio guide. This version is an MVP - a version containing the most essential functionality based on the feedback from you and other test pilots. This app is built to support the visually impaired or blind users. Say "Hi Faerdin" or Hit the voice command button on the bottom right to explore.\n\nDrive safely and enjoy your trip.',
+                    AppStrings.welcomeDescription,
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 20),
                   ),
@@ -69,7 +70,7 @@ class HomeScreen extends StatelessWidget {
                     minimumSize: const Size(250, 50),
                   ),
                   child: const Text(
-                    'Contionue',
+                    AppStrings.contionueText,
                     style: TextStyle(fontSize: 20),
                   ),
                 ),
