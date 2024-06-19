@@ -28,11 +28,16 @@
 		<string>LaunchScreen</string>
 		<key>UIMainStoryboardFile</key>
 		<string>Main</string>
+		  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+		<string>Faerdin needs your location to monitor and show on map when trip is ongoing.</string>
+		<key>NSLocationWhenInUseUsageDescription</key>
+		<string>Faerdin needs your location to monitor and show on map when trip is ongoing.</string>
 		<key>UISupportedInterfaceOrientations</key>
 		<array>
-			<string>UIInterfaceOrientationPortrait</string>
-			<string>UIInterfaceOrientationLandscapeLeft</string>
-			<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
 		</array>
 		<key>UISupportedInterfaceOrientations~ipad</key>
 		<array>

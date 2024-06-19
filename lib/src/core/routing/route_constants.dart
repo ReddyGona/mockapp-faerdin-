@@ -25,4 +25,14 @@ class RouteConstants {
     name: 'audiGuideDetailScreen',
     path: '/AudiGuideDetailScreen',
   );
+
+  static const AppRouteConfig kGoogleMapsScreen = AppRouteConfig(
+    name: 'googleMapsScreen',
+    path: '/GoogleMapsScreen',
+  );
+
+  static const AppRouteConfig kGoogleMapsFullScreen = AppRouteConfig(
+    name: 'googleMapsFullScreen',
+    path: '/GoogleMapsFullScreen',
+  );
 }

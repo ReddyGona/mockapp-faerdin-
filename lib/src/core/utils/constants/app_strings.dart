@@ -22,4 +22,5 @@ class AppStrings {
   static const String languageSettingsText = 'Language Settings';
   static const String termsOfServiceText = 'Terms Of Service';
   static const String appLanguageText = 'App Language';
+  static const String viewFullScreenMaps = 'View Full Screen Maps';
 }

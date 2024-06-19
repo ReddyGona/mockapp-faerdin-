@@ -5,6 +5,8 @@ import 'package:mockapp/src/core/routing/route_constants.dart';
 import 'package:mockapp/src/features/audio_guide/presentation/pages/audio_guide_detail_screen.dart';
 import 'package:mockapp/src/features/audio_guide/presentation/pages/audio_guide_screen.dart';
 import 'package:mockapp/src/features/bottom_nav/presentation/pages/bottom_nav_bar.dart';
+import 'package:mockapp/src/features/google_maps/presentation/pages/full_screen_maps.dart';
+import 'package:mockapp/src/features/google_maps/presentation/pages/google_maps_screen.dart';
 import 'package:mockapp/src/features/home_screen/presentation/pages/home_screen.dart';
 import 'package:mockapp/src/features/settings/presentation/pages/settings_screen.dart';
 import 'package:mockapp/src/features/splash/presentation/pages/splash_screen.dart';
@@ -74,6 +76,26 @@ final GoRouter router = GoRouter(
         return MaterialPage<dynamic>(
           key: state.pageKey,
           child: const AudioGuideDetailScreen(),
+        );
+      },
+    ),
+    GoRoute(
+      name: RouteConstants.kGoogleMapsFullScreen.name,
+      path: RouteConstants.kGoogleMapsFullScreen.path,
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return MaterialPage<dynamic>(
+          key: state.pageKey,
+          child: const GoogleMapsFullScreen(),
+        );
+      },
+    ),
+    GoRoute(
+      name: RouteConstants.kGoogleMapsScreen.name,
+      path: RouteConstants.kGoogleMapsScreen.path,
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return MaterialPage<dynamic>(
+          key: state.pageKey,
+          child: const GoogleMapsScreen(),
         );
       },
     ),

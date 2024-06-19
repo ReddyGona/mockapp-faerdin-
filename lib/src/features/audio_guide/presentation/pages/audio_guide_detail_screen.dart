@@ -2,9 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mockapp/src/core/core_exports.dart';
 import 'package:mockapp/src/core/utils/constants/app_paths.dart';
+import 'package:mockapp/src/features/google_maps/presentation/pages/google_maps_screen.dart';
 
-class AudioGuideDetailScreen extends StatelessWidget {
+class AudioGuideDetailScreen extends StatefulWidget {
   const AudioGuideDetailScreen({super.key});
+
+  @override
+  State<AudioGuideDetailScreen> createState() => _AudioGuideDetailScreenState();
+}
+
+class _AudioGuideDetailScreenState extends State<AudioGuideDetailScreen> {
+  bool viewOnMap = false;
+  bool displayFullScreen = false;
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +25,13 @@ class AudioGuideDetailScreen extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.sizeOf(context).width,
                 height: MediaQuery.sizeOf(context).height * 0.49,
-                child: Image.asset(
-                  AppPaths.listImage,
-                  fit: BoxFit.cover,
-                  gaplessPlayback: true,
-                ),
+                child: viewOnMap
+                    ? const GoogleMapsScreen()
+                    : Image.asset(
+                        AppPaths.listImage,
+                        fit: BoxFit.cover,
+                        gaplessPlayback: true,
+                      ),
               ),
               Positioned(
                 top: 40,
@@ -41,7 +52,17 @@ class AudioGuideDetailScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        if (!viewOnMap) {
+                          viewOnMap = !viewOnMap;
+                          setState(() {});
+                        } else {
+                          getIt.get<AppRoutingAbstract>().navigateWithPush(
+                                context,
+                                RouteConstants.kGoogleMapsFullScreen.path,
+                              );
+                        }
+                      },
                       style: ElevatedButton.styleFrom(
                         shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(
@@ -52,9 +73,11 @@ class AudioGuideDetailScreen extends StatelessWidget {
                         foregroundColor: Colors.white,
                         minimumSize: const Size(250, 50),
                       ),
-                      child: const Text(
-                        AppStrings.viewOnMapText,
-                        style: TextStyle(fontSize: 20),
+                      child: Text(
+                        viewOnMap
+                            ? AppStrings.viewFullScreenMaps
+                            : AppStrings.viewOnMapText,
+                        style: const TextStyle(fontSize: 20),
                       ),
                     ),
                   ],
@@ -140,7 +163,7 @@ class AudioGuideDetailScreen extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 20),
         child: ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
